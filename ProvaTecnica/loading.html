@@ -1,0 +1,39 @@
+<html>
+<head>
+
+
+<link rel="stylesheet" href="css/styleloading.css">
+<link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$("document").ready(function()
+{
+	var cont=0;
+	$("#wrap").hide();
+	$("#mask").hide();
+	$("#btnLogin").click(function()
+	{
+		if(cont==0)
+		{
+			$("#wrap").show("fast");
+			var maskHeight = $(document).height();
+			var maskWidth = $(window).width();
+			$('#mask').css({'width':maskWidth,'height':maskHeight});
+			//efeito de transição
+			$('#mask').fadeIn(1000);
+			$('#mask').fadeTo("slow",0.8);
+			cont++;
+			$("#mask").fadeOut(1000);
+		}else if(cont==1)
+		{
+			$("#wrap").hide("fast");
+			$("#mask").hide();
+			cont=0;
+		}
+	});
+});
+</script>
+</head>
+</html>

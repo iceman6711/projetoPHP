@@ -1,0 +1,365 @@
+/*custom font*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+	/*background: url('http://thecodeplayer.com/uploads/media/52cb0c094220485.jpg');*/
+}
+/*basic reset*/
+* {margin: 0; padding: 0;}
+/*adding a black bg to the body to make things clearer*/
+body {background: black;
+	font-family: montserrat, arial, verdana;}
+canvas {position:absolute;display:flex;}
+	
+
+#exemplo_wrapper{
+	padding:55px;
+}
+/*form styles*/
+#msform {
+	width: 1200px;
+	margin: 5px auto;
+	text-align: center;
+	position: absolute;
+	float:center;
+}
+#msform fieldset {
+	/*width:500px;*/
+	float:right;
+	background: white;
+	border: 0 none;
+	border-radius: 4px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	margin: 0 10%;
+	position: absolute;
+	float:center;
+}
+/*Ocultar todos menos o fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: flex;
+}
+/*inputs*/
+#msform input, #msform textarea {
+	padding: 15px;
+	float:height;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+	width: 125px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*Ocultar todos menos o fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: flex;
+}
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 25%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+
+#Beneficios{
+	width: 800px; 
+	height: 250px;
+	background-color:white;
+	float: left;
+	
+	width:100%;
+	
+	}
+#Pagina2{
+	width: 800px;
+	height: 220px;
+	text-align: left;
+	background-color: white;
+	
+	width:100%;
+}
+
+#col2{
+	width:200px;
+	height:200px;
+	float:left;
+	text-align:left;
+	margin-left:150px;
+	
+	width:30%;
+}
+
+
+#col{
+	width:900px;
+	height:80px;
+	text-align:center;
+	
+	width:100%;
+}
+
+#fam{
+	width:900px;
+	height:200px;
+	float:center;
+	text-align:center;
+	
+	width:100%;
+	height:80%;
+}
+
+select{
+	padding: 14px;
+	float:height;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 8px;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+ul.navbar {
+	background: #222222; /* Old browsers */
+
+  width: 100%;
+  /*margin: 2em auto; */
+  transition: height 0.3s linear 0s, padding 0.3s linear 0s;
+  position: fixed;
+  top: 0px;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 #555;
+}
+
+#wrapper{ margin-top: 230px; }
+
+ul.navbar li {
+	float: left;
+	margin: 0;
+	position: relative;
+}
+
+ul.navbar li a {
+	display: block;
+	padding: 13px 15px;
+	color: white !important;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all .2s ease-in-out;
+}
+
+ul.navbar li a:hover,
+ul.navbar li:hover > a {
+	background: #39bae6;
+	color: #333 !important;
+}
+
+ul.navbar li ul {
+	margin: 0;
+	position: absolute;
+	background: #222;
+	left: 2em;
+	font-size: 14px;
+	min-width: 200px;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 99;
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.6),
+							0 5px 10px rgba(0,0,0,.6);
+	transition: all .2s ease-in-out;
+}
+
+ul.navbar li ul li { border-top: 1px solid #2a2a2a; }
+ul.navbar li ul li:first-child { border: 0;}
+ul.navbar ul li { float: none; }
+ul.navbar li:hover > ul { opacity: 1; visibility: visible; left: 0; }
+ul.navbar li > ul  ul { top: 0; left: 90%; box-shadow: 0 5px 10px rgba(0,0,0,.6);}
+ul.navbar li > ul li:hover ul { left: 100%; }
+
+.login{
+	float: right;
+	margin-right: 10px;
+	width: 540px;
+	height: 44.5px;
+	background:  #00000;
+	color: white;
+	line-height: 40px;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 0 #555;
+	text-align: right;
+}
+.logindiv{
+	float: right;
+	margin-right:15px;
+	width: 44.5px;
+	height: 44.5px;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 0 #555;
+	background:  #222222;
+}
+.loginfoto{
+	float: center;
+	margin-top:2.2px;
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	/*box-shadow: inset 0 1px 0 #555;*/
+}
+#pulaMuitaLinha{
+	width:100%;
+	height:230px;
+}
+#alinhaEsquerda{
+	width:50%;
+	height:100%;
+}
+#centrar {
+    position:relative;
+	margin-top: 5px;
+	margin-bottom:5px;
+	margin-left:5px;
+	margin-right:5px;
+}
+#table{
+	width: 600px;
+	float: center;
+	position:relative;
+	width:100%;
+
+}
+#alinha1
+{
+	width: 120px;
+	float: right;
+	height: 40px;
+	
+}
+#alinha2{
+	width: 110px;
+	float: left;
+	height: 58px;
+	
+}
+#alinha3
+{
+	width: 120px;
+	float: right;
+	height: 60px;
+}
+#memo1{
+	width: 100px;
+	height: 90px;
+}
+#col1{
+	margin:20px;
+	text-align:left;
+	float:left;
+}
+
+#col4{
+	width:317px;
+	margin:20px;
+	text-align:left;
+	float:left;
+}
+
+#col3{
+	width:500px;
+	text-align:left;
+	float:left;
+}
