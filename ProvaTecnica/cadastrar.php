@@ -1,30 +1,45 @@
-<?php
-	//session_start();
-	if($_SESSION['logou']!='s'){
-		header("location: ../index.php");
-		exit;
-	}
-	//echo $n;
-	
-
-?>
 <html>
 <head>
-<title>Menu Principal</title>
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/btnLogOut.css">
-<script>
- $(document).ready(function(){
-	 
-    $('.teste').click(function(){
-        $('.teste2').slideToggle('fast');
-        });
-    });
-</script>
+	<title>Novo Login</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/ajaxCadastra.js"></script>
+	<link rel="stylesheet" href="css/style2.css">
+	<script>
+		$("document").ready(function(){
+			$("#btnCadastra").click(function(){
+				var login = $("#novologin").val();
+				var senha = $("#novasenha").val();
+				var nome = $("#nomecompleto").val();
+				if (login.length>0 && senha.length>0 && nome.length>0)
+				{
+					cadastraLogin(login,senha,nome);
+				}else if(login.length==0 || senha.length==0){
+					alert("Login ou senha estão vazios...");
+				}else{
+					alert("Nome vazio....");
+					$("#nomecompleto").focus();
+				}
+			});
+		});
+	</script>
 </head>
 <body>
-<canvas id="c"></canvas>
+	<canvas id="c"></canvas>
+<center>
+	<div id="centrar">
+	<form id="msform">
+	<fieldset>
+	    Cadastro de Novo login<br><Br>
+		Login <input type="text" id="novologin" name="novasenha" placeholder="Digite o Login que deseja...." maxlength="100px" size="30"/><br>
+		Senha <input type="password" id="novasenha" name="novasenha" placeholder="Digite sua senha..." maxlength="100px" size="30px"/><br>
+		Nome Completo <input type="text" id="nomecompleto" placeholder="Digite seu nome...." maxlength="400px" size="50px"/><br>	
+		<input type="button" class="action-button" id="btnCadastra" value="Cadastrar"/>
+	</fieldset>
+	</form>
+	</div>
+</center>
+</body>
 <script type="text/javascript">
 var c = document.getElementById("c");
 var ctx = c.getContext("2d");
@@ -77,42 +92,4 @@ function draw()
 
 setInterval(draw, 33);
 </script>
-<center>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="foto">
-	<img src="../img/fail.png">
-</div>
-</center>
-<ul class="navbar cf">
-			<li><a href="../Model/mMenu.php"> Home</a> </li>
-            <li><a href="#">Cadastros</a>
-                <ul>
-					<li><a href="../Model/cadCliente.php">Cadastro de Clientes</a></li>
-					<li><a href="../Model/cadServ.php">Cadastro de Servi&ccedil;o</a></li>
-                </ul>		
-            </li>
-            <li><a href="#">Pesquisas</a>
-				<ul>
-					<li><a href="../Model/pesqServ.php">Servi&ccedil;os Contratados</a></li>
-				</ul>
-			</li>
-            <div class="logindiv">
-				<div class="loginfoto">
-					<a class="teste"><img class="imgLogin" src="../img/logo.png" width="40" height="40" id="jcrop"/></a>
-				</div>	
-				<div class="teste2">
-					<li class="LogOut"><a href="../index.php">Log Out</a></li><Br><!-- É nesta parte do código que o botão log out é feito -->
-				</div>
-            </div>
-            <div class="login">
-                Bem Vindo! <?php echo $n; ?>
-            </div>
-		</ul>		
-</body>
 </html>

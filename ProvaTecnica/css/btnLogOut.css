@@ -1,0 +1,36 @@
+/* é neste arquivo css que é feito todo a aparencia do botão de log out :) */
+.teste{
+	cursor:pointer;
+}
+.teste2{
+	display: block;
+	text-align:left;
+	margin-top:13px;
+	right:0;
+	position: absolute;
+	background:red;
+    width:200px;
+    height:50px;
+	display:none;
+	margin-left: 50px;
+	
+}
+.slide {
+	margin:0;
+	padding:0;
+}
+.LogOut{
+	float:left;
+	width:200px;
+	display: block;
+	position:absolute;
+	color: white !important;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.LogOut a:hover,
+.LogOut li:hover > a {
+	background: #00FF7F;
+	color: red !important;
+}

@@ -1,7 +1,7 @@
 <?php
-		session_start();
         $login   = $_GET['login']; 
         $senha   = $_GET['senha'];
+		$nome 	 = $_GET['nome'];
 		require_once("ControladorGeral.php");
 		$controlador=new ControladorGeral();
 		//$_SESSION["idnome"] = $usuario;
@@ -14,28 +14,23 @@
 			$dbh = new PDO("mysql:host=$host;dbname=provatecnica",$username,$password);
 			$resultado='conectei';
 			$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
-			
-			$qry="SELECT COUNT(*) FROM login where login='$login' and senha=md5('$senha');";
+			$qry="SELECT COUNT(*) FROM login where login='$login';";
 			$consulta=$dbh->query($qry);
 			$result = $consulta->fetchColumn();
 			if($result>0)
 			{
-				//$consulta=$dbh->prepare("SELECT nome FROM login where login=':login' and senha=md5(':senha');");
-				//$consulta->bindParam(':login', $login, PDO::PARAM_STR);
-				//$consulta->bindParam(':senha', $senha, PDO::PARAM_STR);			
-				//$consulta->execute();
-				$qry="SELECT nome FROM login where login='$login' and senha=md5('$senha');";
-				foreach ($dbh->query($qry) as $row) {
-					//$controlador->setNomeUser($row['nome']);
-					$_SESSION['nome']=$row['nome'];
-				}
-				echo "Login Autorizado";
-			}else {echo "Login nao encontrado";}
+				echo "Este Login já está em uso.";
+			}else{
+					$tabela="login(nome,login,senha)";
+					$values= "values('$nome','$login',md5('$senha'))";
+					$retorn=$controlador->cadastra($tabela,$values);
+					if($controlador->cadastra($tabela,$values)){
+						echo "Cadastrado";
+					}else {echo "Erro ao cadastrar";};
+			}
 			$dbh = null;
 		}catch(PDOException $e)
 			{
 				echo $e->getMessage();
 			}
-
-		
 ?>

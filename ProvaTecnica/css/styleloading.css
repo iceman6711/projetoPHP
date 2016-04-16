@@ -1,5 +1,5 @@
 
-@import "http://battlelog.battlefield.com/cdnprefix/local/public/base/fonts/purista/purista.css";
+/*@import "http://battlelog.battlefield.com/cdnprefix/local/public/base/fonts/purista/purista.css";*/
 @-webkit-keyframes title {
   0% {
     opacity: 0;
@@ -302,18 +302,18 @@ background: black;
   -moz-box-shadow: 0 0 15px #bce4ff;
   -webkit-box-shadow: 0 0 15px #bce4ff;
   box-shadow: 0 0 15px #bce4ff;
-  -moz-animation: blink 3.4s infinite;
-  -webkit-animation: blink 3.4s infinite;
-  animation: blink 3.4s infinite;
+  -moz-animation: blink 2.4s infinite;
+  -webkit-animation: blink 2.4s infinite;
+  animation: blink 2.4s infinite;
 }
 .loading span.title {
-  -moz-animation: title 3.4s linear infinite;
-  -webkit-animation: title 3.4s linear infinite;
-  animation: title 3.4s linear infinite;
+  -moz-animation: title 2.4s linear infinite;
+  -webkit-animation: title 2.4s linear infinite;
+  animation: title 2.4s linear infinite;
 }
 .loading span.text {
-  -moz-animation: title 3.4s linear 1.7s infinite;
-  -webkit-animation: title 3.4s linear 1.7s infinite;
-  animation: title 3.4s linear 1.7s infinite;
+  -moz-animation: title 2.4s linear 1.7s infinite;
+  -webkit-animation: title 2.4s linear 1.7s infinite;
+  animation: title 2.4s linear 1.7s infinite;
   opacity: 0;
 }

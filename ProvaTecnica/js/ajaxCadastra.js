@@ -14,21 +14,19 @@ function initAjax(){
 				}
 				return xmlhttp;
 }
-function respostaServidor(){
+function cadastraLogin(login,senha, nome){
 	ajax=initAjax();
-	var login=document.getElementById("Login").value;
-	var senha=document.getElementById("senha").value;
 	if(ajax){
-		url= "Controller/acLogin.php?login="+login+"&senha="+senha;
+		url= "Controller/acCadLogin.php?login="+login+"&senha="+senha+"&nome="+nome;
 		ajax.open('GET',url,true);
 		ajax.onreadystatechange=function(){
 		if(ajax.readyState == 4 ){//state 4 significa finalizado
 			if(ajax.status == 200){
 				//alert(ajax.responseText);
-				if(ajax.responseText=="Login Autorizado")
+				if(ajax.responseText=="Cadastrado")
 				{
-					window.location.replace("Model/mMenu.php");
-				}else {alert(ajax.responseText); $("#SemConta").show("fast");};
+					window.close();
+				}else {alert(ajax.responseText);};
 				$("#wrap").hide();
 				$("#mask").hide();
 			}

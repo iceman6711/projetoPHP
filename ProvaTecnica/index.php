@@ -1,5 +1,8 @@
 <?php
  session_start();
+ if($_SESSION['logou']=='s'){
+	 session_destroy();
+ };
 ?>
 <html>
 <head>
@@ -11,9 +14,9 @@
 <link rel="stylesheet" href="css/style.css">
 <script>
 	$("document").ready(function(){
-		//$("#wrap").hide();
+		$("#wrap").hide();
 		$("#SemConta").hide();
-		//	$("#mask").hide();
+		$("#mask").hide();
 		$("#btnLogin").click(function(){
 			var login = $("#Login").val();
 			var senha = $("#senha").val();
@@ -59,7 +62,7 @@
 <canvas id="c"></canvas>
 <center>
 <div id="pulaMuitaLinha"></div>
-	<div id="centrar">
+	
 	<form name="login" id="msform" method="post">
 	<fieldset>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bem Vindo!<br><br>
@@ -71,7 +74,7 @@
 	<input type="button" class="action-button" id="btnLogin" name="btnLogin" value="Logar!"/>
 	</fieldset>
 	</form>
-	</div>
+	
 </center>
 
 <?php
