@@ -8,7 +8,7 @@
         $senha = preg_replace('/[^a-z0-9]/i', '', $senha);
 		$host= "localhost";
 		$username="root";
-		$password="testepratico";
+		$password="";
 		sleep(1);
 		try{
 			$dbh = new PDO("mysql:host=$host;dbname=provatecnica",$username,$password);
