@@ -14,7 +14,7 @@
 	public function cadastra($tabela,$values){
 		$host= "localhost";
 		$username="root";
-		$password="testepratico";
+		$password="";
 		try{
 			$dbh = new PDO("mysql:host=$host;dbname=provatecnica",$username,$password);
 			$resultado='conectei';
